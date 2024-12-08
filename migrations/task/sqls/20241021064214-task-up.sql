@@ -279,22 +279,22 @@ where
     -- inner join ( 用戶王小明的已使用堂數) as "COURSE_BOOKING"
     -- on "COURSE_BOOKING".user_id = "CREDIT_PURCHASE".user_id;
 -- 用戶王小明的購買堂數
-select 
-  "CREDIT_PURCHASE".user_id, 
-  sum("CREDIT_PURCHASE".purchased_credits) as total_credit
-from "CREDIT_PURCHASE"
-where
-  "CREDIT_PURCHASE".user_id = (select id from "USER" where email = 'wXlTq@hexschooltest.io')
-  group by "CREDIT_PURCHASE".user_id;
+-- select 
+--   "CREDIT_PURCHASE".user_id, 
+--   sum("CREDIT_PURCHASE".purchased_credits) as total_credit
+-- from "CREDIT_PURCHASE"
+-- where
+--   "CREDIT_PURCHASE".user_id = (select id from "USER" where email = 'wXlTq@hexschooltest.io')
+--   group by "CREDIT_PURCHASE".user_id;
 -- 用戶王小明的已使用堂數
-select 
-  "COURSE_BOOKING".user_id,
-  count(*) as used_credit
-from "COURSE_BOOKING"
-where
-  "COURSE_BOOKING".user_id = (select id from "USER" where email = 'wXlTq@hexschooltest.io')
-  and status = '上課中'
-  group by "COURSE_BOOKING".user_id;
+-- select 
+--   "COURSE_BOOKING".user_id,
+--   count(*) as used_credit
+-- from "COURSE_BOOKING"
+-- where
+--   "COURSE_BOOKING".user_id = (select id from "USER" where email = 'wXlTq@hexschooltest.io')
+--   and status = '上課中'
+--   group by "COURSE_BOOKING".user_id;
 -- 5-8 解答
 select
   "COURSE_BOOKING".user_id,
