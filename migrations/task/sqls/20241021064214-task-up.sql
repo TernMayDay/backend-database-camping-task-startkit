@@ -174,7 +174,7 @@ insert into "COURSE" (user_id, skill_id, name, start_at, end_at, max_participant
   (select id from "SKILL" where name = '重訓'),
   '重訓基礎課',
   '2024-11-25 14:00:00',
-  '024-11-25 16:00:00',
+  '2024-11-25 16:00:00',
   10,
   'https://test-meeting.test.io'
 );
@@ -205,7 +205,7 @@ insert into "COURSE_BOOKING" (user_id, course_id, booking_at, status) values
 ),(
   (select id from "USER" where email = 'richman@hexschooltest.io'),
   (select id from "COURSE" where user_id = (select id from "USER" where email = 'lee2000@hexschooltest.io')),
-  '024-11-24 16:00:00',
+  '2024-11-24 16:00:00',
   '即將授課'
 );
 
@@ -231,7 +231,7 @@ insert into "COURSE_BOOKING" (user_id, course_id, booking_at, status) values
   (select id from "COURSE" where user_id = (select id from "USER" where email = 'lee2000@hexschooltest.io')),
   '2024-11-24 17:10:25',
   '即將授課'
-)
+);
 
 -- 5-4. 查詢：取得王小明所有的預約紀錄，包含取消預約的紀錄
 select * from "COURSE_BOOKING"
